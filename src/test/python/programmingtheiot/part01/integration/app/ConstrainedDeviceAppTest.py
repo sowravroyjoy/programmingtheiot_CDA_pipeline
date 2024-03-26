@@ -10,6 +10,10 @@
 import logging
 import unittest
 
+import sys
+sys.path.append('src/main/python')
+sys.path.append('src/test/python')
+
 from programmingtheiot.cda.app.ConstrainedDeviceApp import ConstrainedDeviceApp
 
 

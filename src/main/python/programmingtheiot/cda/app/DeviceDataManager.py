@@ -7,6 +7,10 @@
 # and designed to be modified by the student as needed.
 #
 
+import sys
+sys.path.append('src/main/python')
+sys.path.append('src/test/python')
+
 import logging
 
 from programmingtheiot.cda.connection.CoapClientConnector import CoapClientConnector
