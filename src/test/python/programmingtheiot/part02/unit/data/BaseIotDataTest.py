@@ -14,6 +14,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.data.BaseIotData import BaseIotData
 
+
 class BaseIotDataTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -29,7 +30,7 @@ class BaseIotDataTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing BaseIotData class...")
 		
 	def setUp(self):
@@ -43,7 +44,7 @@ class BaseIotDataTest(unittest.TestCase):
 		
 		self.assertEqual(td.getName(), ConfigConst.NOT_SET)
 		self.assertEqual(td.getTypeID(), ConfigConst.DEFAULT_TYPE_ID)
-		self.assertEqual(td.getLocationID(), "constraineddevice001") # from PiotConfig.props
+		self.assertEqual(td.getLocationID(), "constraineddevice001")  # from PiotConfig.props
 		self.assertEqual(td.getStatusCode(), ConfigConst.DEFAULT_STATUS)
 
 	def testParameterUpdates(self):
@@ -62,7 +63,7 @@ class BaseIotDataTest(unittest.TestCase):
 		td2 = self._createTestIotData()
 		
 		self.assertEqual(td.getName(), ConfigConst.NOT_SET)
-		self.assertEqual(td.getLocationID(), "constraineddevice001") # from PiotConfig.props
+		self.assertEqual(td.getLocationID(), "constraineddevice001")  # from PiotConfig.props
 		self.assertEqual(td.getStatusCode(), ConfigConst.DEFAULT_STATUS)
 		
 		td.updateData(td2)
@@ -80,11 +81,14 @@ class BaseIotDataTest(unittest.TestCase):
 		
 		return td
 
+
 class TestIotData(BaseIotData):
-	def __init__(self, typeID: int = ConfigConst.DEFAULT_TYPE_ID, name = ConfigConst.NOT_SET, d = None):
-		super(TestIotData, self).__init__(name = name, typeID = typeID, d = d)
+
+	def __init__(self, typeID: int=ConfigConst.DEFAULT_TYPE_ID, name=ConfigConst.NOT_SET, d=None):
+		super(TestIotData, self).__init__(name=name, typeID=typeID, d=d)
 		
 		pass
+
 
 if __name__ == "__main__":
 	unittest.main()

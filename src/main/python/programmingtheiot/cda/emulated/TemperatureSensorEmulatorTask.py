@@ -16,13 +16,14 @@ from programmingtheiot.cda.sim.BaseSensorSimTask import BaseSensorSimTask
 
 from pisense import SenseHAT
 
+
 class TemperatureSensorEmulatorTask(BaseSensorSimTask):
 	"""
 	Shell representation of class for student implementation.
 	
 	"""
 
-	def __init__(self, dataSet = None):
+	def __init__(self, dataSet=None):
 		pass
 	
 	def generateTelemetry(self) -> SensorData:

@@ -9,6 +9,7 @@
 
 from programmingtheiot.data.ActuatorData import ActuatorData
 
+
 class IActuatorSimTask():
 	"""
 	This is a simple 'interface' for an Actuator abstraction.

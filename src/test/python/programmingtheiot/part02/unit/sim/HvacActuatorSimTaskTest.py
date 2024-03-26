@@ -15,6 +15,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.cda.sim.HvacActuatorSimTask import HvacActuatorSimTask
 
+
 class HvacActuatorSimTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -28,7 +29,7 @@ class HvacActuatorSimTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing HvacActuatorSimTask class...")
 		self.hSimTask = HvacActuatorSimTask()
 		
@@ -39,7 +40,7 @@ class HvacActuatorSimTaskTest(unittest.TestCase):
 		pass
 
 	def testUpdateActuator(self):
-		ad = ActuatorData(typeID = ConfigConst.HVAC_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HVAC_ACTUATOR_TYPE)
 		ad.setCommand(ConfigConst.COMMAND_ON)
 		ad.setValue(self.DEFAULT_VAL_A)
 		
@@ -67,7 +68,7 @@ class HvacActuatorSimTaskTest(unittest.TestCase):
 		
 	@unittest.skip("Ignore for now.")
 	def testUpdateActuatorRepeatCommands(self):
-		ad = ActuatorData(typeID = ConfigConst.HVAC_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HVAC_ACTUATOR_TYPE)
 		
 		# new command ON with new value - should succeed
 		ad.setCommand(ConfigConst.COMMAND_ON)
@@ -143,6 +144,7 @@ class HvacActuatorSimTaskTest(unittest.TestCase):
 		
 		self.assertIsNone(adr)
 		logging.info("ActuatorData: " + str(adr))
+
 		
 if __name__ == "__main__":
 	unittest.main()

@@ -12,6 +12,7 @@ import unittest
 
 from programmingtheiot.cda.app.ConstrainedDeviceApp import ConstrainedDeviceApp
 
+
 class ConstrainedDeviceAppTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -34,7 +35,7 @@ class ConstrainedDeviceAppTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing ConstrainedDeviceApp class...")
 		self.cda = ConstrainedDeviceApp()
 		
@@ -47,6 +48,7 @@ class ConstrainedDeviceAppTest(unittest.TestCase):
 	def testRunConstrainedDeviceApp(self):
 		self.cda.startApp()
 		self.cda.stopApp(0)
+
 
 if __name__ == "__main__":
 	unittest.main()

@@ -17,6 +17,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.cda.emulated.TemperatureSensorEmulatorTask import TemperatureSensorEmulatorTask
 
+
 class TemperatureEmulatorTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -37,7 +38,7 @@ class TemperatureEmulatorTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing TemperatureEmulatorTaskTest class [using SenseHAT emulator]...")
 		self.tEmuTask = TemperatureSensorEmulatorTask()
 		
@@ -69,6 +70,7 @@ class TemperatureEmulatorTaskTest(unittest.TestCase):
 			sleep(5)
 		else:
 			logging.warning("FAIL: SensorData is None.")
+
 			
 if __name__ == "__main__":
 	unittest.main()

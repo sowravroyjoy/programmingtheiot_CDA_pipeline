@@ -14,13 +14,14 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.data.ActuatorData import ActuatorData
 
+
 class BaseActuatorSimTask():
 	"""
 	Shell representation of class for student implementation.
 	
 	"""
 
-	def __init__(self, name: str = ConfigConst.NOT_SET, typeID: int = ConfigConst.DEFAULT_ACTUATOR_TYPE, simpleName: str = "Actuator"):
+	def __init__(self, name: str=ConfigConst.NOT_SET, typeID: int=ConfigConst.DEFAULT_ACTUATOR_TYPE, simpleName: str="Actuator"):
 		pass
 		
 	def getLatestActuatorResponse(self) -> ActuatorData:
@@ -44,7 +45,7 @@ class BaseActuatorSimTask():
 		"""
 		pass
 		
-	def _activateActuator(self, val: float = ConfigConst.DEFAULT_VAL, stateData: str = None) -> int:
+	def _activateActuator(self, val: float=ConfigConst.DEFAULT_VAL, stateData: str=None) -> int:
 		"""
 		Implement basic logging. Actuator-specific functionality should be implemented by sub-class.
 		
@@ -53,7 +54,7 @@ class BaseActuatorSimTask():
 		"""
 		pass
 		
-	def _deactivateActuator(self, val: float = ConfigConst.DEFAULT_VAL, stateData: str = None) -> int:
+	def _deactivateActuator(self, val: float=ConfigConst.DEFAULT_VAL, stateData: str=None) -> int:
 		"""
 		Implement basic logging. Actuator-specific functionality should be implemented by sub-class.
 		

@@ -14,6 +14,7 @@ from time import sleep
 
 from programmingtheiot.cda.app.DeviceDataManager import DeviceDataManager
 
+
 class DeviceDataManagerNoCommsTest(unittest.TestCase):
 	"""
 	This test case class contains very basic integration tests for
@@ -36,7 +37,7 @@ class DeviceDataManagerNoCommsTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing DeviceDataManager class...")
 		
 	def setUp(self):
@@ -57,9 +58,10 @@ class DeviceDataManagerNoCommsTest(unittest.TestCase):
 		ddMgr = DeviceDataManager()
 		ddMgr.startManager()
 		
-		sleep(120) # 2 minutes
+		sleep(120)  # 2 minutes
 		
 		ddMgr.stopManager()
+
 
 if __name__ == "__main__":
 	unittest.main()

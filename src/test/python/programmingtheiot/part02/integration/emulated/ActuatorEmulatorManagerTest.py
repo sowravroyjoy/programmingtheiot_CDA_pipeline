@@ -19,6 +19,7 @@ from programmingtheiot.common.DefaultDataMessageListener import DefaultDataMessa
 
 from programmingtheiot.data.ActuatorData import ActuatorData
 
+
 class ActuatorEmulatorManagerTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -39,7 +40,7 @@ class ActuatorEmulatorManagerTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing ActuatorAdapterManager class [using SenseHAT emulator]...")
 		
 		self.defaultMsgListener = DefaultDataMessageListener()
@@ -53,7 +54,7 @@ class ActuatorEmulatorManagerTest(unittest.TestCase):
 		pass
 
 	def testHumidifierEmulation(self):
-		ad = ActuatorData(typeID = ConfigConst.HUMIDIFIER_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HUMIDIFIER_ACTUATOR_TYPE)
 		ad.setValue(50.0)
 		
 		ad.setCommand(ConfigConst.COMMAND_ON)
@@ -63,7 +64,7 @@ class ActuatorEmulatorManagerTest(unittest.TestCase):
 		self.actuatorAdapterMgr.sendActuatorCommand(ad)
 
 	def testHvacEmulation(self):
-		ad = ActuatorData(typeID = ConfigConst.HVAC_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HVAC_ACTUATOR_TYPE)
 		ad.setValue(22.5)
 		
 		ad.setCommand(ConfigConst.COMMAND_ON)
@@ -73,13 +74,14 @@ class ActuatorEmulatorManagerTest(unittest.TestCase):
 		self.actuatorAdapterMgr.sendActuatorCommand(ad)
 
 	def testLedDisplayEmulation(self):
-		ad = ActuatorData(typeID = ConfigConst.LED_DISPLAY_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.LED_DISPLAY_ACTUATOR_TYPE)
 		ad.setCommand(ConfigConst.COMMAND_ON)
 		ad.setStateData("What's up?")
 		self.actuatorAdapterMgr.sendActuatorCommand(ad)
 		
 		ad.setCommand(ConfigConst.COMMAND_OFF)
 		self.actuatorAdapterMgr.sendActuatorCommand(ad)
+
 
 if __name__ == "__main__":
 	unittest.main()

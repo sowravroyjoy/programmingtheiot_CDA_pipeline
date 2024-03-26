@@ -9,6 +9,7 @@
 
 from programmingtheiot.data.SensorData import SensorData
 
+
 class ISensorSimTask():
 	"""
 	This is a simple 'interface' definition for a sensor task abstraction.

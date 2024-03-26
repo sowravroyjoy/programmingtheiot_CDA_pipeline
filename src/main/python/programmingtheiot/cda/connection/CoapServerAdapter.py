@@ -25,16 +25,17 @@ from programmingtheiot.cda.connection.handlers.GetTelemetryResourceHandler impor
 from programmingtheiot.cda.connection.handlers.UpdateActuatorResourceHandler import UpdateActuatorResourceHandler
 from programmingtheiot.cda.connection.handlers.GetSystemPerformanceResourceHandler import GetSystemPerformanceResourceHandler
 
+
 class CoapServerAdapter():
 	"""
 	Definition for a CoAP communications server, with embedded test functions.
 	
 	"""
 	
-	def __init__(self, dataMsgListener = None):
+	def __init__(self, dataMsgListener=None):
 		pass
 		
-	def addResource(self, resourcePath: ResourceNameEnum = None, endName: str = None, resource = None):
+	def addResource(self, resourcePath: ResourceNameEnum=None, endName: str=None, resource=None):
 		pass
 				
 	def startServer(self):
@@ -43,5 +44,5 @@ class CoapServerAdapter():
 	def stopServer(self):
 		pass
 	
-	def setDataMessageListener(self, listener: IDataMessageListener = None) -> bool:
+	def setDataMessageListener(self, listener: IDataMessageListener=None) -> bool:
 		pass

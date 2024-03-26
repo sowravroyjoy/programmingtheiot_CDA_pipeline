@@ -10,6 +10,7 @@
 from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.cda.sim.BaseActuatorSimTask import BaseActuatorSimTask
 
+
 class HumidifierActuatorSimTask(BaseActuatorSimTask):
 	"""
 	This is a simple wrapper for an Actuator abstraction - it provides

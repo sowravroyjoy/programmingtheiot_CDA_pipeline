@@ -17,6 +17,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.cda.emulated.PressureSensorEmulatorTask import PressureSensorEmulatorTask
 
+
 class PressureEmulatorTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -37,7 +38,7 @@ class PressureEmulatorTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing PressureEmulatorTaskTest class [using SenseHAT emulator]...")
 		self.pEmuTask = PressureSensorEmulatorTask()
 		
@@ -69,6 +70,7 @@ class PressureEmulatorTaskTest(unittest.TestCase):
 			sleep(5)
 		else:
 			logging.warning("FAIL: SensorData is None.")
+
 			
 if __name__ == "__main__":
 	unittest.main()

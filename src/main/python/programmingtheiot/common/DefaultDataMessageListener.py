@@ -17,6 +17,7 @@ from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 from programmingtheiot.common.ITelemetryDataListener import ITelemetryDataListener
 from programmingtheiot.common.ISystemPerformanceDataListener import ISystemPerformanceDataListener
 
+
 class DefaultDataMessageListener(IDataMessageListener):
 	"""
 	Basic (default) implementation of the IDataMessageListener interface for testing.
@@ -32,7 +33,7 @@ class DefaultDataMessageListener(IDataMessageListener):
 		self.sysPerfDataListener = None
 		self.telemetryDataListeners = {}
 		
-	def getLatestActuatorDataResponseFromCache(self, name: str = None) -> ActuatorData:
+	def getLatestActuatorDataResponseFromCache(self, name: str=None) -> ActuatorData:
 		"""
 		Retrieves the named actuator data (response) item from the internal data cache.
 		
@@ -41,7 +42,7 @@ class DefaultDataMessageListener(IDataMessageListener):
 		"""
 		pass
 		
-	def getLatestSensorDataFromCache(self, name: str = None) -> SensorData:
+	def getLatestSensorDataFromCache(self, name: str=None) -> SensorData:
 		"""
 		Retrieves the named sensor data item from the internal data cache.
 		
@@ -53,7 +54,7 @@ class DefaultDataMessageListener(IDataMessageListener):
 		
 		return sd
 	
-	def getLatestSystemPerformanceDataFromCache(self, name: str = None) -> SystemPerformanceData:
+	def getLatestSystemPerformanceDataFromCache(self, name: str=None) -> SystemPerformanceData:
 		"""
 		Retrieves the named system performance data from the internal data cache.
 		
@@ -129,7 +130,7 @@ class DefaultDataMessageListener(IDataMessageListener):
 				
 		return True
 	
-	def setSystemPerformanceDataListener(self, listener: ISystemPerformanceDataListener = None):
+	def setSystemPerformanceDataListener(self, listener: ISystemPerformanceDataListener=None):
 		"""
 		Setter for the ITelemetryDataListener for system performance data.
 		
@@ -138,7 +139,7 @@ class DefaultDataMessageListener(IDataMessageListener):
 		if listener:
 			self.sysPerfDataListener = listener
 			
-	def setTelemetryDataListener(self, name: str = None, listener: ITelemetryDataListener = None):
+	def setTelemetryDataListener(self, name: str=None, listener: ITelemetryDataListener=None):
 		"""
 		Sets the named telemetry data listener. The listener's callback function will be invoked
 		when telemetry data is available for the given name.

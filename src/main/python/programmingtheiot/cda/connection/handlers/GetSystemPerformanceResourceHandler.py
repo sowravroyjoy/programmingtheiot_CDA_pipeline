@@ -17,6 +17,7 @@ from programmingtheiot.common.ITelemetryDataListener import ITelemetryDataListen
 from programmingtheiot.data.DataUtil import DataUtil
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class GetSystemPerformanceResourceHandler(ITelemetryDataListener):
 	"""
 	Observable resource that will collect system performance data based on the

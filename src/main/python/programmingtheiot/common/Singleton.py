@@ -7,6 +7,7 @@
 # Copyright (c) 2020 by Andrew D. King
 # 
 
+
 class Singleton(type):
 	"""
 	Metaclass definition for sub-classes that must be Singleton instances.

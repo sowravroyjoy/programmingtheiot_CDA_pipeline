@@ -13,6 +13,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.common.ConfigUtil import ConfigUtil
 
+
 class BaseIotData(object):
 	"""
 	This is the base class for all data containers. It stores values that each
@@ -23,7 +24,7 @@ class BaseIotData(object):
 	
 	"""
 
-	def __init__(self, name = ConfigConst.NOT_SET, typeID = ConfigConst.DEFAULT_TYPE_ID, d = None):
+	def __init__(self, name=ConfigConst.NOT_SET, typeID=ConfigConst.DEFAULT_TYPE_ID, d=None):
 		"""
 		Constructor.
 		
@@ -39,24 +40,24 @@ class BaseIotData(object):
 		
 		if d:
 			try:
-				self.name       = d[ConfigConst.NAME_PROP]
-				self.typeID     = d[ConfigConst.TYPE_ID_PROP]
+				self.name = d[ConfigConst.NAME_PROP]
+				self.typeID = d[ConfigConst.TYPE_ID_PROP]
 				self.statusCode = d[ConfigConst.STATUS_CODE_PROP]
-				self.latitude   = d[ConfigConst.LATITUDE_PROP]
-				self.longitude  = d[ConfigConst.LONGITUDE_PROP]
-				self.elevation  = d[ConfigConst.ELEVATION_PROP]
+				self.latitude = d[ConfigConst.LATITUDE_PROP]
+				self.longitude = d[ConfigConst.LONGITUDE_PROP]
+				self.elevation = d[ConfigConst.ELEVATION_PROP]
 				
 				useDefaults = False
 			except:
 				pass
 			
 		if useDefaults:
-			self.name       = name
-			self.typeID     = typeID
+			self.name = name
+			self.typeID = typeID
 			self.statusCode = ConfigConst.DEFAULT_STATUS
-			self.latitude   = ConfigConst.DEFAULT_LAT
-			self.longitude  = ConfigConst.DEFAULT_LON
-			self.elevation  = ConfigConst.DEFAULT_ELEVATION
+			self.latitude = ConfigConst.DEFAULT_LAT
+			self.longitude = ConfigConst.DEFAULT_LON
+			self.elevation = ConfigConst.DEFAULT_ELEVATION
 		
 		if not self.name:
 			self.name = ConfigConst.NOT_SET

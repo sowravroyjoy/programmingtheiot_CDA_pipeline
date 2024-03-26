@@ -11,6 +11,7 @@ import logging
 
 from programmingtheiot.data.SensorData import SensorData
 
+
 class PressureI2cSensorAdapterTask():
 	"""
 	Shell representation of class for student implementation.

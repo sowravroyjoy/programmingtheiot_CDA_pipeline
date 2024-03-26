@@ -14,6 +14,7 @@ from time import sleep
 
 from pisense import SenseHAT
 
+
 class SenseHatEmulatorQuickTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -37,9 +38,9 @@ class SenseHatEmulatorQuickTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing SenseHatEmulatorQuickTest class [using SenseHAT emulator]...")
-		self.sh = SenseHAT(emulate = True)
+		self.sh = SenseHAT(emulate=True)
 		
 	def setUp(self):
 		pass
@@ -58,6 +59,7 @@ class SenseHatEmulatorQuickTest(unittest.TestCase):
 		
 		self.sh.screen.clear()
 		self.sh.screen.close()
+
 				
 if __name__ == "__main__":
 	unittest.main()

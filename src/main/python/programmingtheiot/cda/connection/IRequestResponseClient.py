@@ -12,6 +12,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.common.ResourceNameEnum import ResourceNameEnum
 from programmingtheiot.common.IDataMessageListener import IDataMessageListener
 
+
 class IRequestResponseClient():
 	"""
 	Interface definition for request/response clients.
@@ -20,7 +21,7 @@ class IRequestResponseClient():
 	DEFAULT_TIMEOUT = 5
 	DEFAULT_TTL = 300
 	
-	def sendDiscoveryRequest(self, timeout: int = 5) -> bool:
+	def sendDiscoveryRequest(self, timeout: int=5) -> bool:
 		"""
 		Connects to the server and sends a discovery request to the server.
 		IDataMessageListener callback must be set to receive response.
@@ -30,7 +31,7 @@ class IRequestResponseClient():
 		"""
 		pass
 
-	def sendDeleteRequest(self, resource: ResourceNameEnum = None, name: str = None, enableCON: bool = False, timeout: int = ConfigConst.DEFAULT_TIMEOUT) -> bool:
+	def sendDeleteRequest(self, resource: ResourceNameEnum=None, name: str=None, enableCON: bool=False, timeout: int=ConfigConst.DEFAULT_TIMEOUT) -> bool:
 		"""
 		Connects to the server and sends DELETE request to resource at path.
 		IDataMessageListener callback must be set to receive response.
@@ -42,7 +43,7 @@ class IRequestResponseClient():
 		"""
 		pass
 
-	def sendGetRequest(self, resource: ResourceNameEnum = None, name: str = None, enableCON: bool = False, timeout: int = ConfigConst.DEFAULT_TIMEOUT) -> bool:
+	def sendGetRequest(self, resource: ResourceNameEnum=None, name: str=None, enableCON: bool=False, timeout: int=ConfigConst.DEFAULT_TIMEOUT) -> bool:
 		"""
 		Connects to the server and sends GET request for resource at path.
 		IDataMessageListener callback must be set to receive response.
@@ -54,7 +55,7 @@ class IRequestResponseClient():
 		"""
 		pass
 
-	def sendPostRequest(self, resource: ResourceNameEnum = None, name: str = None, enableCON: bool = False, payload: str = None, timeout: int = ConfigConst.DEFAULT_TIMEOUT) -> bool:
+	def sendPostRequest(self, resource: ResourceNameEnum=None, name: str=None, enableCON: bool=False, payload: str=None, timeout: int=ConfigConst.DEFAULT_TIMEOUT) -> bool:
 		"""
 		Connects to the server and sends POST request of payload to resource at path.
 		IDataMessageListener callback must be set to receive response.
@@ -67,7 +68,7 @@ class IRequestResponseClient():
 		"""
 		pass
 
-	def sendPutRequest(self, resource: ResourceNameEnum = None, name: str = None, enableCON: bool = False, payload: str = None, timeout: int = ConfigConst.DEFAULT_TIMEOUT) -> bool:
+	def sendPutRequest(self, resource: ResourceNameEnum=None, name: str=None, enableCON: bool=False, payload: str=None, timeout: int=ConfigConst.DEFAULT_TIMEOUT) -> bool:
 		"""
 		Connects to the server and sends GET request for resource at path.
 		IDataMessageListener callback must be set to receive response.
@@ -80,7 +81,7 @@ class IRequestResponseClient():
 		"""
 		pass
 
-	def setDataMessageListener(self, listener: IDataMessageListener = None) -> bool:
+	def setDataMessageListener(self, listener: IDataMessageListener=None) -> bool:
 		"""
 		Sets the data message listener reference, assuming listener is non-null.
 		
@@ -90,7 +91,7 @@ class IRequestResponseClient():
 		"""
 		pass
 
-	def startObserver(self, resource: ResourceNameEnum = None, name: str = None, ttl: int = ConfigConst.DEFAULT_TTL) -> bool:
+	def startObserver(self, resource: ResourceNameEnum=None, name: str=None, ttl: int=ConfigConst.DEFAULT_TTL) -> bool:
 		"""
 		Connects to the server and sends a discovery request to the server.
 		IDataMessageListener callback must be set to receive response.
@@ -102,7 +103,7 @@ class IRequestResponseClient():
 		"""
 		pass
 
-	def stopObserver(self, resource: ResourceNameEnum = None, name: str = None, timeout: int = ConfigConst.DEFAULT_TIMEOUT) -> bool:
+	def stopObserver(self, resource: ResourceNameEnum=None, name: str=None, timeout: int=ConfigConst.DEFAULT_TIMEOUT) -> bool:
 		"""
 		Connects to the server and sends a discovery request to the server.
 		IDataMessageListener callback must be set to receive response.

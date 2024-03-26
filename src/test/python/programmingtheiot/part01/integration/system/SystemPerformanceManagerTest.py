@@ -15,6 +15,7 @@ from time import sleep
 from programmingtheiot.cda.system.SystemPerformanceManager import SystemPerformanceManager
 from programmingtheiot.common.DefaultDataMessageListener import DefaultDataMessageListener
 
+
 class SystemPerformanceManagerTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -37,7 +38,7 @@ class SystemPerformanceManagerTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing SystemPerformanceManager class...")
 		self.spMgr = SystemPerformanceManager()
 		self.defaultMsgListener = DefaultDataMessageListener()
@@ -55,6 +56,7 @@ class SystemPerformanceManagerTest(unittest.TestCase):
 		sleep(60)
 		
 		self.spMgr.stopManager()
+
 
 if __name__ == "__main__":
 	unittest.main()

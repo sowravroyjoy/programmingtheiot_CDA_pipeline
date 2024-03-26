@@ -17,6 +17,7 @@ from programmingtheiot.common.ITelemetryDataListener import ITelemetryDataListen
 from programmingtheiot.data.DataUtil import DataUtil
 from programmingtheiot.data.SensorData import SensorData
 
+
 class GetTelemetryResourceHandler(ITelemetryDataListener):
 	"""
 	Observable resource that will collect telemetry based on the given
@@ -30,6 +31,6 @@ class GetTelemetryResourceHandler(ITelemetryDataListener):
 	def __init__(self):
 		pass
 		
-	def onSensorDataUpdate(self, data: SensorData = None) -> bool:
+	def onSensorDataUpdate(self, data: SensorData=None) -> bool:
 		pass
 	

@@ -23,6 +23,7 @@ from programmingtheiot.cda.sim.HumiditySensorSimTask import HumiditySensorSimTas
 from programmingtheiot.cda.sim.TemperatureSensorSimTask import TemperatureSensorSimTask
 from programmingtheiot.cda.sim.PressureSensorSimTask import PressureSensorSimTask
 
+
 class SensorAdapterManager(object):
 	"""
 	Shell representation of class for student implementation.

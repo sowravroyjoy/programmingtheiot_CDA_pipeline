@@ -17,6 +17,7 @@ from programmingtheiot.common.DefaultDataMessageListener import DefaultDataMessa
 
 from programmingtheiot.data.ActuatorData import ActuatorData
 
+
 class ActuatorAdapterManagerTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -28,7 +29,7 @@ class ActuatorAdapterManagerTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing ActuatorAdapterManager class...")
 		
 		self.defaultMsgListener = DefaultDataMessageListener()
@@ -42,7 +43,7 @@ class ActuatorAdapterManagerTest(unittest.TestCase):
 		pass
 
 	def testHumidifierSimulation(self):
-		ad = ActuatorData(typeID = ConfigConst.HUMIDIFIER_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HUMIDIFIER_ACTUATOR_TYPE)
 		ad.setValue(50.0)
 		
 		ad.setCommand(ConfigConst.COMMAND_ON)
@@ -52,7 +53,7 @@ class ActuatorAdapterManagerTest(unittest.TestCase):
 		self.actuatorAdapterMgr.sendActuatorCommand(ad)
 
 	def testHvacSimulation(self):
-		ad = ActuatorData(typeID = ConfigConst.HVAC_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HVAC_ACTUATOR_TYPE)
 		ad.setValue(22.5)
 		
 		ad.setCommand(ConfigConst.COMMAND_ON)
@@ -60,6 +61,7 @@ class ActuatorAdapterManagerTest(unittest.TestCase):
 		
 		ad.setCommand(ConfigConst.COMMAND_OFF)
 		self.actuatorAdapterMgr.sendActuatorCommand(ad)
+
 
 if __name__ == "__main__":
 	unittest.main()

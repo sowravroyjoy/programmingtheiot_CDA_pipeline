@@ -12,6 +12,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.common.ResourceNameEnum import ResourceNameEnum
 from programmingtheiot.common.IDataMessageListener import IDataMessageListener
 
+
 class IPubSubClient():
 	"""
 	Interface definition for pub/sub clients.
@@ -36,7 +37,7 @@ class IPubSubClient():
 		"""
 		pass
 
-	def publishMessage(self, resource: ResourceNameEnum = None, payload: str = None, qos: int = ConfigConst.DEFAULT_QOS) -> bool:
+	def publishMessage(self, resource: ResourceNameEnum=None, payload: str=None, qos: int=ConfigConst.DEFAULT_QOS) -> bool:
 		"""
 		Attempts to publish a message to the given topic with the given qos
 		to the pub/sub broker / server. If not already connected, the sub-class
@@ -50,7 +51,7 @@ class IPubSubClient():
 		"""
 		pass
 
-	def subscribeToTopic(self, resource: ResourceNameEnum = None, callback = None, qos: int = ConfigConst.DEFAULT_QOS) -> bool:
+	def subscribeToTopic(self, resource: ResourceNameEnum=None, callback=None, qos: int=ConfigConst.DEFAULT_QOS) -> bool:
 		"""
 		Attempts to subscribe to a topic with the given qos hosted by the
 		pub/sub broker / server. If not already connected, the sub-class
@@ -66,7 +67,7 @@ class IPubSubClient():
 		"""
 		pass
 
-	def unsubscribeFromTopic(self, resource: ResourceNameEnum = None) -> bool:
+	def unsubscribeFromTopic(self, resource: ResourceNameEnum=None) -> bool:
 		"""
 		Attempts to unsubscribe from a topic hosted by the pub/sub broker / server.
 		If not already connected, the sub-class implementation should either
@@ -77,7 +78,7 @@ class IPubSubClient():
 		"""
 		pass
 
-	def setDataMessageListener(self, listener: IDataMessageListener = None) -> bool:
+	def setDataMessageListener(self, listener: IDataMessageListener=None) -> bool:
 		"""
 		Sets the data message listener reference, assuming listener is non-null.
 		

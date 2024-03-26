@@ -13,6 +13,7 @@ import random
 from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.cda.sim.BaseActuatorSimTask import BaseActuatorSimTask
 
+
 class HvacActuatorSimTask(BaseActuatorSimTask):
 	"""
 	Shell representation of class for student implementation.

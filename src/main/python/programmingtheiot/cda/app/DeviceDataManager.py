@@ -25,6 +25,7 @@ from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class DeviceDataManager(IDataMessageListener):
 	"""
 	Shell representation of class for student implementation.
@@ -34,7 +35,7 @@ class DeviceDataManager(IDataMessageListener):
 	def __init__(self):
 		pass
 		
-	def getLatestActuatorDataResponseFromCache(self, name: str = None) -> ActuatorData:
+	def getLatestActuatorDataResponseFromCache(self, name: str=None) -> ActuatorData:
 		"""
 		Retrieves the named actuator data (response) item from the internal data cache.
 		
@@ -43,7 +44,7 @@ class DeviceDataManager(IDataMessageListener):
 		"""
 		pass
 		
-	def getLatestSensorDataFromCache(self, name: str = None) -> SensorData:
+	def getLatestSensorDataFromCache(self, name: str=None) -> SensorData:
 		"""
 		Retrieves the named sensor data item from the internal data cache.
 		
@@ -52,7 +53,7 @@ class DeviceDataManager(IDataMessageListener):
 		"""
 		pass
 	
-	def getLatestSystemPerformanceDataFromCache(self, name: str = None) -> SystemPerformanceData:
+	def getLatestSystemPerformanceDataFromCache(self, name: str=None) -> SystemPerformanceData:
 		"""
 		Retrieves the named system performance data from the internal data cache.
 		
@@ -115,10 +116,10 @@ class DeviceDataManager(IDataMessageListener):
 		"""
 		pass
 	
-	def setSystemPerformanceDataListener(self, listener: ISystemPerformanceDataListener = None):
+	def setSystemPerformanceDataListener(self, listener: ISystemPerformanceDataListener=None):
 		pass
 			
-	def setTelemetryDataListener(self, name: str = None, listener: ITelemetryDataListener = None):
+	def setTelemetryDataListener(self, name: str=None, listener: ITelemetryDataListener=None):
 		pass
 			
 	def startManager(self):

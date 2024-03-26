@@ -17,6 +17,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.cda.emulated.HumidifierEmulatorTask import HumidifierEmulatorTask
 
+
 class HumidifierEmulatorTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -37,7 +38,7 @@ class HumidifierEmulatorTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing HumidifierEmulatorTask class [using SenseHAT emulator]...")
 		self.huSimTask = HumidifierEmulatorTask()
 		
@@ -48,7 +49,7 @@ class HumidifierEmulatorTaskTest(unittest.TestCase):
 		pass
 
 	def testUpdateEmulator(self):
-		ad = ActuatorData(typeID = ConfigConst.HUMIDIFIER_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HUMIDIFIER_ACTUATOR_TYPE)
 		ad.setCommand(ConfigConst.COMMAND_ON)
 		ad.setValue(50.0)
 		
@@ -87,6 +88,7 @@ class HumidifierEmulatorTaskTest(unittest.TestCase):
 			logging.info("ActuatorData: " + str(adr))
 		else:
 			logging.warning("ActuatorData is None.")
+
 			
 if __name__ == "__main__":
 	unittest.main()

@@ -17,6 +17,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.cda.app.DeviceDataManager import DeviceDataManager
 from programmingtheiot.data.ActuatorData import ActuatorData
 
+
 class DeviceDataManagerIntegrationTest(unittest.TestCase):
 	"""
 	This test case class contains very basic integration tests for
@@ -39,7 +40,7 @@ class DeviceDataManagerIntegrationTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing DeviceDataManager class...")
 		
 	def setUp(self):
@@ -56,6 +57,7 @@ class DeviceDataManagerIntegrationTest(unittest.TestCase):
 		sleep(60)
 		
 		ddMgr.stopManager()
+
 		
 if __name__ == "__main__":
 	unittest.main()

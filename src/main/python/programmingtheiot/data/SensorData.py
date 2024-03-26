@@ -11,14 +11,15 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.data.BaseIotData import BaseIotData
 
+
 class SensorData(BaseIotData):
 	"""
 	Shell representation of class for student implementation.
 	
 	"""
 		
-	def __init__(self, typeID: int = ConfigConst.DEFAULT_SENSOR_TYPE, name = ConfigConst.NOT_SET, d = None):
-		super(SensorData, self).__init__(name = name, typeID = typeID, d = d)
+	def __init__(self, typeID: int=ConfigConst.DEFAULT_SENSOR_TYPE, name=ConfigConst.NOT_SET, d=None):
+		super(SensorData, self).__init__(name=name, typeID=typeID, d=d)
 		pass
 	
 	def getSensorType(self) -> int:

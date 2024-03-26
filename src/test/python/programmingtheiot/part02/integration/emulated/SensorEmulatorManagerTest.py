@@ -15,6 +15,7 @@ from time import sleep
 from programmingtheiot.cda.system.SensorAdapterManager import SensorAdapterManager
 from programmingtheiot.common.DefaultDataMessageListener import DefaultDataMessageListener
 
+
 class SensorEmulatorManagerTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -35,7 +36,7 @@ class SensorEmulatorManagerTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing SensorAdapterManager class [using SenseHAT emulator]...")
 		
 		self.defaultMsgListener = DefaultDataMessageListener()
@@ -54,6 +55,7 @@ class SensorEmulatorManagerTest(unittest.TestCase):
 		sleep(60)
 		
 		self.sensorAdapterMgr.stopManager()
+
 
 if __name__ == "__main__":
 	unittest.main()

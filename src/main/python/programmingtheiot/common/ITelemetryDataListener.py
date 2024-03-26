@@ -9,6 +9,7 @@
 
 from programmingtheiot.data.SensorData import SensorData
 
+
 class ITelemetryDataListener():
 	"""
 	Interface definition for telemetry data listener clients.

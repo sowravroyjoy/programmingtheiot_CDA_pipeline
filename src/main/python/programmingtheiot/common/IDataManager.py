@@ -9,6 +9,7 @@
 
 from programmingtheiot.common.IDataMessageListener import IDataMessageListener
 
+
 class IDataManager(object):
 	"""
 	Interface definition for data manager implementations.
@@ -29,7 +30,7 @@ class IDataManager(object):
 		"""
 		pass
 	
-	def setDataMessageListener(self, listener: IDataMessageListener = None):
+	def setDataMessageListener(self, listener: IDataMessageListener=None):
 		"""
 		Sets the data message listener if non-null.
 		

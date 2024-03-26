@@ -22,6 +22,7 @@ from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.data.DataUtil import DataUtil
 
+
 class MqttClientConnectorTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -33,7 +34,7 @@ class MqttClientConnectorTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing MqttClientConnector class...")
 		
 		self.cfg = ConfigUtil()
@@ -61,13 +62,13 @@ class MqttClientConnectorTest(unittest.TestCase):
 		delay = self.cfg.getInteger(ConfigConst.MQTT_GATEWAY_SERVICE, ConfigConst.KEEP_ALIVE_KEY, ConfigConst.DEFAULT_KEEP_ALIVE)
 		
 		self.mcc.connectClient()
-		self.mcc.subscribeToTopic(resource = ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE, qos = qos)
+		self.mcc.subscribeToTopic(resource=ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE, qos=qos)
 		sleep(5)
 		
-		self.mcc.publishMessage(resource = ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE, msg = "TEST: This is the CDA message payload.", qos = qos)
+		self.mcc.publishMessage(resource=ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE, msg="TEST: This is the CDA message payload.", qos=qos)
 		sleep(5)
 		
-		self.mcc.unsubscribeFromTopic(resource = ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE)
+		self.mcc.unsubscribeFromTopic(resource=ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE)
 		sleep(5)
 		
 		sleep(delay)
@@ -89,7 +90,7 @@ class MqttClientConnectorTest(unittest.TestCase):
 		
 		sleep(5)
 		
-		self.mcc.publishMessage(resource = ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, msg = payload, qos = qos)
+		self.mcc.publishMessage(resource=ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, msg=payload, qos=qos)
 		
 		sleep(delay)
 		
@@ -111,7 +112,7 @@ class MqttClientConnectorTest(unittest.TestCase):
 		
 		sleep(5)
 				
-		self.mcc.publishMessage(resource = ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, msg = payload, qos = qos)
+		self.mcc.publishMessage(resource=ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, msg=payload, qos=qos)
 		
 		sleep(delay + 5)
 		
@@ -133,7 +134,7 @@ class MqttClientConnectorTest(unittest.TestCase):
 		
 		sleep(5)
 				
-		self.mcc.publishMessage(resource = ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, msg = payload, qos = qos)
+		self.mcc.publishMessage(resource=ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, msg=payload, qos=qos)
 		
 		sleep(delay + 5)
 		
@@ -145,7 +146,7 @@ class MqttClientConnectorTest(unittest.TestCase):
 		delay = self.cfg.getInteger(ConfigConst.MQTT_GATEWAY_SERVICE, ConfigConst.KEEP_ALIVE_KEY, ConfigConst.DEFAULT_KEEP_ALIVE)
 		
 		self.mcc.connectClient()
-		self.mcc.subscribeToTopic(resource = ResourceNameEnum.CDA_MGMT_STATUS_CMD_RESOURCE, qos = qos)
+		self.mcc.subscribeToTopic(resource=ResourceNameEnum.CDA_MGMT_STATUS_CMD_RESOURCE, qos=qos)
 		
 		sleep(delay)
 		
@@ -157,7 +158,7 @@ class MqttClientConnectorTest(unittest.TestCase):
 		delay = self.cfg.getInteger(ConfigConst.MQTT_GATEWAY_SERVICE, ConfigConst.KEEP_ALIVE_KEY, ConfigConst.DEFAULT_KEEP_ALIVE)
 		
 		self.mcc.connectClient()
-		self.mcc.subscribeToTopic(resource = ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, qos = qos)
+		self.mcc.subscribeToTopic(resource=ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, qos=qos)
 		
 		sleep(300)
 		
@@ -173,11 +174,12 @@ class MqttClientConnectorTest(unittest.TestCase):
 		delay = self.cfg.getInteger(ConfigConst.MQTT_GATEWAY_SERVICE, ConfigConst.KEEP_ALIVE_KEY, ConfigConst.DEFAULT_KEEP_ALIVE)
 		
 		self.mcc.connectClient()
-		self.mcc.publishMessage(resource = ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE, msg = "TEST: This is the CDA message payload.", qos = qos)
+		self.mcc.publishMessage(resource=ResourceNameEnum.CDA_MGMT_STATUS_MSG_RESOURCE, msg="TEST: This is the CDA message payload.", qos=qos)
 		
 		sleep(delay)
 		
 		self.mcc.disconnectClient()
+
 
 if __name__ == "__main__":
 	unittest.main()

@@ -9,13 +9,14 @@
 
 import programmingtheiot.common.ConfigConst as ConfigConst
 
+
 class BaseSystemUtilTask():
 	"""
 	Shell implementation representation of class for student implementation.
 	
 	"""
 	
-	def __init__(self, name = ConfigConst.NOT_SET, typeID = ConfigConst.DEFAULT_SENSOR_TYPE):
+	def __init__(self, name=ConfigConst.NOT_SET, typeID=ConfigConst.DEFAULT_SENSOR_TYPE):
 		pass
 	
 	def getName(self) -> str:

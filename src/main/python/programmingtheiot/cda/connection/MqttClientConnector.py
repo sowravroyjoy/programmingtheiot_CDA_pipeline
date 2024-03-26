@@ -18,13 +18,14 @@ from programmingtheiot.common.ResourceNameEnum import ResourceNameEnum
 
 from programmingtheiot.cda.connection.IPubSubClient import IPubSubClient
 
+
 class MqttClientConnector(IPubSubClient):
 	"""
 	Shell representation of class for student implementation.
 	
 	"""
 
-	def __init__(self, clientID: str = None):
+	def __init__(self, clientID: str=None):
 		"""
 		Default constructor. This will set remote broker information and client connection
 		information based on the default configuration file contents.
@@ -74,14 +75,14 @@ class MqttClientConnector(IPubSubClient):
 		"""
 		pass
 	
-	def publishMessage(self, resource: ResourceNameEnum = None, msg: str = None, qos: int = ConfigConst.DEFAULT_QOS):
+	def publishMessage(self, resource: ResourceNameEnum=None, msg: str=None, qos: int=ConfigConst.DEFAULT_QOS):
 		pass
 	
-	def subscribeToTopic(self, resource: ResourceNameEnum = None, callback = None, qos: int = ConfigConst.DEFAULT_QOS):
+	def subscribeToTopic(self, resource: ResourceNameEnum=None, callback=None, qos: int=ConfigConst.DEFAULT_QOS):
 		pass
 	
-	def unsubscribeFromTopic(self, resource: ResourceNameEnum = None):
+	def unsubscribeFromTopic(self, resource: ResourceNameEnum=None):
 		pass
 
-	def setDataMessageListener(self, listener: IDataMessageListener = None) -> bool:
+	def setDataMessageListener(self, listener: IDataMessageListener=None) -> bool:
 		pass

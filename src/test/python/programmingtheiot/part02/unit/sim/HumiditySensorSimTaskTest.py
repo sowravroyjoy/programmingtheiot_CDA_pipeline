@@ -14,6 +14,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.cda.sim.HumiditySensorSimTask import HumiditySensorSimTask
 
+
 class HumiditySensorSimTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -25,7 +26,7 @@ class HumiditySensorSimTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing HumiditySensorSimTask class...")
 		self.hSimTask = HumiditySensorSimTask()
 		
@@ -43,11 +44,12 @@ class HumiditySensorSimTaskTest(unittest.TestCase):
 		else:
 			logging.warning("SensorData is None.")
 			
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testGetTelemetryValue(self):
 		val = self.hSimTask.getTelemetryValue()
 		logging.info("Humidity data: %f", val)
 		self.assertGreater(val, ConfigConst.DEFAULT_VAL)
+
 
 if __name__ == "__main__":
 	unittest.main()

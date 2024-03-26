@@ -16,6 +16,7 @@ from programmingtheiot.cda.sim.BaseActuatorSimTask import BaseActuatorSimTask
 
 from pisense import SenseHAT
 
+
 class LedDisplayEmulatorTask(BaseActuatorSimTask):
 	"""
 	Shell representation of class for student implementation.
@@ -25,9 +26,9 @@ class LedDisplayEmulatorTask(BaseActuatorSimTask):
 	def __init__(self):
 		pass
 
-	def _activateActuator(self, val: float = ConfigConst.DEFAULT_VAL, stateData: str = None) -> int:
+	def _activateActuator(self, val: float=ConfigConst.DEFAULT_VAL, stateData: str=None) -> int:
 		pass
 
-	def _deactivateActuator(self, val: float = ConfigConst.DEFAULT_VAL, stateData: str = None) -> int:
+	def _deactivateActuator(self, val: float=ConfigConst.DEFAULT_VAL, stateData: str=None) -> int:
 		pass
 	

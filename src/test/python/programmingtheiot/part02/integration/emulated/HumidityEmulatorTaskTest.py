@@ -17,6 +17,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.cda.emulated.HumiditySensorEmulatorTask import HumiditySensorEmulatorTask
 
+
 class HumidityEmulatorTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -37,7 +38,7 @@ class HumidityEmulatorTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing HumidifierEmulatorTask class [using SenseHAT emulator]...")
 		self.hEmuTask = HumiditySensorEmulatorTask()
 		
@@ -69,6 +70,7 @@ class HumidityEmulatorTaskTest(unittest.TestCase):
 			sleep(5)
 		else:
 			logging.warning("FAIL: SensorData is None.")
+
 			
 if __name__ == "__main__":
 	unittest.main()

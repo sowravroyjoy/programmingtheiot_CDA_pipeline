@@ -12,6 +12,7 @@ import unittest
 
 from programmingtheiot.cda.system.SystemCpuUtilTask import SystemCpuUtilTask
 
+
 class SystemCpuUtilTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -23,7 +24,7 @@ class SystemCpuUtilTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing SystemCpuUtilTask class...")
 		self.cpuUtilTask = SystemCpuUtilTask()
 		
@@ -38,6 +39,7 @@ class SystemCpuUtilTaskTest(unittest.TestCase):
 		
 		self.assertGreaterEqual(val, 0.0)
 		logging.info("CPU utilization: %s", str(val))
+
 
 if __name__ == "__main__":
 	unittest.main()

@@ -14,6 +14,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.common.ConfigUtil import ConfigUtil
 
+
 class ConfigUtilTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -33,9 +34,9 @@ class ConfigUtilTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing ConfigUtil class...")
-		self.configUtil = ConfigUtil(configFile = self.configFile)
+		self.configUtil = ConfigUtil(configFile=self.configFile)
 		
 	def setUp(self):
 		pass
@@ -75,6 +76,7 @@ class ConfigUtilTest(unittest.TestCase):
 	
 	def testIsConfigDataLoaded(self):
 		self.assertTrue(self.configUtil.isConfigDataLoaded())
+
 	
 if __name__ == "__main__":
 	unittest.main()

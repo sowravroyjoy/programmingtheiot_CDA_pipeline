@@ -14,6 +14,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.data.SensorData import SensorData
 
+
 class SensorDataTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -31,7 +32,7 @@ class SensorDataTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing SensorData class...")
 		
 	def setUp(self):
@@ -72,6 +73,7 @@ class SensorDataTest(unittest.TestCase):
 		logging.info("Sensor data as string: " + str(sd))
 		
 		return sd
+
 
 if __name__ == "__main__":
 	unittest.main()

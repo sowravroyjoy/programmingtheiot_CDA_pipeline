@@ -16,6 +16,7 @@ from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class DataUtilTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -27,7 +28,7 @@ class DataUtilTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing DataUtil class...")
 		
 		encodeToUtf8 = False
@@ -48,20 +49,20 @@ class DataUtilTest(unittest.TestCase):
 	def tearDown(self):
 		pass
 	
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testActuatorDataConversionsFromJson(self):
 		logging.info("\n\n----- [ActuatorData Conversions from JSON] -----")
 		
 		self.assertIsNone(self.dataUtil.jsonToActuatorData(None))
 		self.assertIsNone(self.dataUtil.jsonToActuatorData(""))
 		
-		ad     = ActuatorData()
+		ad = ActuatorData()
 		ad.setName(self.adName)
 		adJson = self.dataUtil.actuatorDataToJson(ad)
 		
-		adObj1    = self.dataUtil.jsonToActuatorData(adJson)
+		adObj1 = self.dataUtil.jsonToActuatorData(adJson)
 		adObj1Str = self.dataUtil.actuatorDataToJson(adObj1)
-		adObj2    = self.dataUtil.jsonToActuatorData(adObj1Str)
+		adObj2 = self.dataUtil.jsonToActuatorData(adObj1Str)
 
 		logging.info("Sample JSON: " + str(adJson))
 		logging.info("JSON to ActuatorData: " + str(adObj1))
@@ -71,7 +72,7 @@ class DataUtilTest(unittest.TestCase):
 		self.assertEqual(self.adName, adObj2.getName())
 		self.assertEqual(adObj1.getTimeStamp(), adObj2.getTimeStamp())
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testActuatorDataConversionsFromObject(self):
 		logging.info("\n\n----- [JSON Conversions from ActuatorData] -----")
 		
@@ -80,7 +81,7 @@ class DataUtilTest(unittest.TestCase):
 		adObj1.setName(adName)
 		
 		adObj1Str = self.dataUtil.actuatorDataToJson(adObj1)
-		adObj2    = self.dataUtil.jsonToActuatorData(adObj1Str)
+		adObj2 = self.dataUtil.jsonToActuatorData(adObj1Str)
 		adObj2Str = self.dataUtil.actuatorDataToJson(adObj2)
 
 		logging.info("Sample ActuatorData: " + str(adObj1))
@@ -93,20 +94,20 @@ class DataUtilTest(unittest.TestCase):
 		self.assertEqual(adObj1.getTimeStamp(), adObj2.getTimeStamp())
 		self.assertEqual(adObj1Str, adObj2Str)
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testSensorDataConversionsFromJson(self):
 		logging.info("\n\n----- [SensorData Conversions from JSON] -----")
 		
 		self.assertIsNone(self.dataUtil.jsonToSensorData(None))
 		self.assertIsNone(self.dataUtil.jsonToSensorData(""))
 		
-		sd     = SensorData()
+		sd = SensorData()
 		sd.setName(self.sdName)
 		sdJson = self.dataUtil.sensorDataToJson(sd)
 		
-		sdObj1    = self.dataUtil.jsonToSensorData(sdJson)
+		sdObj1 = self.dataUtil.jsonToSensorData(sdJson)
 		sdObj1Str = self.dataUtil.sensorDataToJson(sdObj1)
-		sdObj2    = self.dataUtil.jsonToSensorData(sdObj1Str)
+		sdObj2 = self.dataUtil.jsonToSensorData(sdObj1Str)
 		
 		logging.info("Sample JSON: " + str(sdJson))
 		logging.info("JSON to SensorData: " + str(sdObj1))
@@ -116,7 +117,7 @@ class DataUtilTest(unittest.TestCase):
 		self.assertEqual(self.sdName, sdObj2.getName())
 		self.assertEqual(sdObj1.getTimeStamp(), sdObj2.getTimeStamp())
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testSensorDataConversionsFromObject(self):
 		logging.info("\n\n----- [JSON Conversions from SensorData] -----")
 		
@@ -125,7 +126,7 @@ class DataUtilTest(unittest.TestCase):
 		sdObj1.setName(sdName)
 		
 		sdObj1Str = self.dataUtil.sensorDataToJson(sdObj1)
-		sdObj2    = self.dataUtil.jsonToSensorData(sdObj1Str)
+		sdObj2 = self.dataUtil.jsonToSensorData(sdObj1Str)
 		sdObj2Str = self.dataUtil.sensorDataToJson(sdObj2)
 		
 		logging.info("Sample SensorData: " + str(sdObj1))
@@ -138,20 +139,20 @@ class DataUtilTest(unittest.TestCase):
 		self.assertEqual(sdObj1.getTimeStamp(), sdObj2.getTimeStamp())
 		self.assertEqual(sdObj1Str, sdObj2Str)
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testSystemPerformanceConversionsFromJson(self):
 		logging.info("\n\n----- [SystemPerformanceData Conversions from JSON] -----")
 		
 		self.assertIsNone(self.dataUtil.jsonToSystemPerformanceData(None))
 		self.assertIsNone(self.dataUtil.jsonToSystemPerformanceData(""))
 		
-		spd     = SystemPerformanceData()
+		spd = SystemPerformanceData()
 		spd.setName(self.spdName)
 		spdJson = self.dataUtil.systemPerformanceDataToJson(spd)
 		
-		spdObj1    = self.dataUtil.jsonToSystemPerformanceData(spdJson)
+		spdObj1 = self.dataUtil.jsonToSystemPerformanceData(spdJson)
 		spdObj1Str = self.dataUtil.systemPerformanceDataToJson(spdObj1)
-		spdObj2    = self.dataUtil.jsonToSystemPerformanceData(spdObj1Str)
+		spdObj2 = self.dataUtil.jsonToSystemPerformanceData(spdObj1Str)
 		
 		logging.info("Sample JSON: " + str(spdJson))
 		logging.info("JSON to SystemPerformanceData: " + str(spdObj1))
@@ -161,7 +162,7 @@ class DataUtilTest(unittest.TestCase):
 		self.assertEqual(self.spdName, spdObj2.getName())
 		self.assertEqual(spdObj1.getTimeStamp(), spdObj2.getTimeStamp())
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testSystemPerformanceDataConversionsFromObject(self):
 		logging.info("\n\n----- [JSON Conversions from SystemPerformanceData] -----")
 		
@@ -170,7 +171,7 @@ class DataUtilTest(unittest.TestCase):
 		spdObj1.setName(spdName)
 		
 		spdObj1Str = self.dataUtil.systemPerformanceDataToJson(spdObj1)
-		spdObj2    = self.dataUtil.jsonToSystemPerformanceData(spdObj1Str)
+		spdObj2 = self.dataUtil.jsonToSystemPerformanceData(spdObj1Str)
 		spdObj2Str = self.dataUtil.systemPerformanceDataToJson(spdObj2)
 		
 		logging.info("Sample SystemPerformanceData: " + str(spdObj1))
@@ -182,6 +183,7 @@ class DataUtilTest(unittest.TestCase):
 		self.assertEqual(spdObj1.getName(), spdObj2.getName())
 		self.assertEqual(spdObj1.getTimeStamp(), spdObj2.getTimeStamp())
 		self.assertEqual(spdObj1Str, spdObj2Str)
+
 
 if __name__ == "__main__":
 	unittest.main()

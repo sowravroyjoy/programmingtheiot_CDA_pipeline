@@ -15,13 +15,14 @@ from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 from programmingtheiot.common.ITelemetryDataListener import ITelemetryDataListener
 from programmingtheiot.common.ISystemPerformanceDataListener import ISystemPerformanceDataListener
 
+
 class IDataMessageListener():
 	"""
 	Interface definition for data message listener clients.
 	
 	"""
 	
-	def getLatestActuatorDataResponseFromCache(self, name: str = None) -> ActuatorData:
+	def getLatestActuatorDataResponseFromCache(self, name: str=None) -> ActuatorData:
 		"""
 		Retrieves the named actuator data (response) item from the internal data cache.
 		
@@ -30,7 +31,7 @@ class IDataMessageListener():
 		"""
 		pass
 		
-	def getLatestSensorDataFromCache(self, name: str = None) -> SensorData:
+	def getLatestSensorDataFromCache(self, name: str=None) -> SensorData:
 		"""
 		Retrieves the named sensor data item from the internal data cache.
 		
@@ -39,7 +40,7 @@ class IDataMessageListener():
 		"""
 		pass
 	
-	def getLatestSystemPerformanceDataFromCache(self, name: str = None) -> SystemPerformanceData:
+	def getLatestSystemPerformanceDataFromCache(self, name: str=None) -> SystemPerformanceData:
 		"""
 		Retrieves the named system performance data from the internal data cache.
 		
@@ -97,7 +98,7 @@ class IDataMessageListener():
 		"""
 		pass
 	
-	def setSystemPerformanceDataListener(self, listener: ISystemPerformanceDataListener = None):
+	def setSystemPerformanceDataListener(self, listener: ISystemPerformanceDataListener=None):
 		"""
 		Sets the system performance listener. The listener's callback function will be invoked
 		when system performance data is available.
@@ -106,7 +107,7 @@ class IDataMessageListener():
 		"""
 		pass
 	
-	def setTelemetryDataListener(self, name: str = None, listener: ITelemetryDataListener = None):
+	def setTelemetryDataListener(self, name: str=None, listener: ITelemetryDataListener=None):
 		"""
 		Sets the named telemetry data listener. The listener's callback function will be invoked
 		when telemetry data is available for the given name.

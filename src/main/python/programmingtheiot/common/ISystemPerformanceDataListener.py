@@ -9,6 +9,7 @@
 
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class ISystemPerformanceDataListener():
 	"""
 	Interface definition for system performance data listener clients.

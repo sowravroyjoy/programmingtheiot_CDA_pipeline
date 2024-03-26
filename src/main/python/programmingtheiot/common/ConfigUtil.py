@@ -18,7 +18,8 @@ from programmingtheiot.common.Singleton import Singleton
 
 import programmingtheiot.common.ConfigConst as ConfigConst
 
-class ConfigUtil(metaclass = Singleton):
+
+class ConfigUtil(metaclass=Singleton):
 	"""
 	A simple utility wrapper around the built-in Python
 	configuration infrastructure.
@@ -27,11 +28,11 @@ class ConfigUtil(metaclass = Singleton):
 	
 	"""
 
-	configFile   = ConfigConst.DEFAULT_CONFIG_FILE_NAME
+	configFile = ConfigConst.DEFAULT_CONFIG_FILE_NAME
 	configParser = configparser.ConfigParser()
 	isLoaded	 = False
 	
-	def __init__(self, configFile: str = None):
+	def __init__(self, configFile: str=None):
 		"""
 		Constructor for ConfigUtil.
 		
@@ -80,7 +81,7 @@ class ConfigUtil(metaclass = Singleton):
 					logging.info("Loading credentials from section " + section + " and file " + credFileName)
 					
 					# read cred data and dump it into a custom section for parsing
-					fileRef  = Path(credFileName)
+					fileRef = Path(credFileName)
 					credData = "[" + ConfigConst.CRED_SECTION + "]\n" + fileRef.read_text()
 					
 					# create unique ConfigParser that preserves key case
@@ -101,7 +102,7 @@ class ConfigUtil(metaclass = Singleton):
 		
 		return None
 	
-	def getProperty(self, section: str, key: str, defaultVal: str = None, forceReload: bool = False):
+	def getProperty(self, section: str, key: str, defaultVal: str=None, forceReload: bool=False):
 		"""
 		Attempts to retrieve the value of 'key' from the config.
 		
@@ -110,9 +111,9 @@ class ConfigUtil(metaclass = Singleton):
 		@param forceReload Defaults to false; if true will reload the config.
 		@return The property associated with 'key' in 'section'.
 		"""
-		return self._getConfig(forceReload).get(section, key, fallback = defaultVal)
+		return self._getConfig(forceReload).get(section, key, fallback=defaultVal)
 	
-	def getBoolean(self, section: str, key: str, forceReload: bool = False):
+	def getBoolean(self, section: str, key: str, forceReload: bool=False):
 		"""
 		Attempts to retrieve the boolean value of 'key' from the config.
 		If not found, or not True, False will be returned.
@@ -122,9 +123,9 @@ class ConfigUtil(metaclass = Singleton):
 		@param forceReload Defaults to false; if true will reload the config.
 		@return The boolean associated with 'key' in 'section', or false.
 		"""
-		return self._getConfig(forceReload).getboolean(section, key, fallback = False)
+		return self._getConfig(forceReload).getboolean(section, key, fallback=False)
 		
-	def getInteger(self, section: str, key: str, defaultVal: int = 0, forceReload: bool = False):
+	def getInteger(self, section: str, key: str, defaultVal: int=0, forceReload: bool=False):
 		"""
 		Attempts to retrieve the integer value of 'key' from the config.
 		
@@ -134,9 +135,9 @@ class ConfigUtil(metaclass = Singleton):
 		@param forceReload Defaults to false; if true will reload the config.
 		@return The property associated with 'key' in 'section'.
 		"""
-		return self._getConfig(forceReload).getint(section, key, fallback = defaultVal)
+		return self._getConfig(forceReload).getint(section, key, fallback=defaultVal)
 	
-	def getFloat(self, section: str, key: str, defaultVal: float = 0.0, forceReload: bool = False):
+	def getFloat(self, section: str, key: str, defaultVal: float=0.0, forceReload: bool=False):
 		"""
 		Attempts to retrieve the float value of 'key' from the config.
 		
@@ -146,7 +147,7 @@ class ConfigUtil(metaclass = Singleton):
 		@param forceReload Defaults to false; if true will reload the config.
 		@return The property associated with 'key' in 'section'.
 		"""
-		return self._getConfig(forceReload).getfloat(section, key, fallback = defaultVal)
+		return self._getConfig(forceReload).getfloat(section, key, fallback=defaultVal)
 	
 	def hasProperty(self, section: str, key: str) -> bool:
 		"""
@@ -199,7 +200,7 @@ class ConfigUtil(metaclass = Singleton):
 		
 		logging.debug("Config: %s", str(self.configParser.sections()))
 
-	def _getConfig(self, forceReload: bool = False) -> configparser:
+	def _getConfig(self, forceReload: bool=False) -> configparser:
 		"""
 		Returns the entire configuration object. If the config file hasn't
 		yet been loaded, it will be loaded.

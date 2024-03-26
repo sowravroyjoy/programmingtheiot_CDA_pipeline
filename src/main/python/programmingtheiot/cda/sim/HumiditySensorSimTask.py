@@ -14,6 +14,7 @@ from programmingtheiot.cda.sim.SensorDataGenerator import SensorDataGenerator
 
 from programmingtheiot.data.SensorData import SensorData
 
+
 class HumiditySensorSimTask(BaseSensorSimTask):
 	"""
 	Shell representation of class for student implementation.

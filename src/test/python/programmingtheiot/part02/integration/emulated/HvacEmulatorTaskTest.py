@@ -17,6 +17,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.cda.emulated.HvacEmulatorTask import HvacEmulatorTask
 
+
 class HvacEmulatorTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -37,7 +38,7 @@ class HvacEmulatorTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing HvacEmulatorTask class [using SenseHAT emulator]...")
 		self.hvSimTask = HvacEmulatorTask()
 		
@@ -48,7 +49,7 @@ class HvacEmulatorTaskTest(unittest.TestCase):
 		pass
 
 	def testUpdateEmulator(self):
-		ad = ActuatorData(typeID = ConfigConst.HVAC_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.HVAC_ACTUATOR_TYPE)
 		ad.setCommand(ConfigConst.COMMAND_ON)
 		ad.setValue(22.0)
 		
@@ -87,6 +88,7 @@ class HvacEmulatorTaskTest(unittest.TestCase):
 			logging.info("ActuatorData: " + str(adr))
 		else:
 			logging.warning("ActuatorData is None.")
+
 			
 if __name__ == "__main__":
 	unittest.main()

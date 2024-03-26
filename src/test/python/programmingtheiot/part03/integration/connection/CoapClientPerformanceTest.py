@@ -20,6 +20,7 @@ from programmingtheiot.common.ResourceNameEnum import ResourceNameEnum
 from programmingtheiot.data.DataUtil import DataUtil
 from programmingtheiot.data.SensorData import SensorData
 
+
 class CoapClientPerformanceTest(unittest.TestCase):
 	"""
 	This test case class contains very basic performance tests for
@@ -33,7 +34,7 @@ class CoapClientPerformanceTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.disable(level = logging.WARNING)
+		logging.disable(level=logging.WARNING)
 		
 	def setUp(self):
 		self.coapClient = CoapClientConnector()
@@ -99,7 +100,7 @@ class CoapClientPerformanceTest(unittest.TestCase):
 		startTime = time.time_ns()
 		
 		for seqNo in range(0, maxTestRuns):
-			self.coapClient.sendGetRequest(resource = ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, enableCON = useCon)
+			self.coapClient.sendGetRequest(resource=ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, enableCON=useCon)
 			
 		endTime = time.time_ns()
 		elapsedMillis = (endTime - startTime) / self.NS_IN_MILLIS
@@ -115,7 +116,7 @@ class CoapClientPerformanceTest(unittest.TestCase):
 		startTime = time.time_ns()
 		
 		for seqNo in range(0, maxTestRuns):
-			self.coapClient.sendPostRequest(resource = ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, enableCON = useCon, payload = payload)
+			self.coapClient.sendPostRequest(resource=ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, enableCON=useCon, payload=payload)
 			
 		endTime = time.time_ns()
 		elapsedMillis = (endTime - startTime) / self.NS_IN_MILLIS
@@ -131,7 +132,7 @@ class CoapClientPerformanceTest(unittest.TestCase):
 		startTime = time.time_ns()
 		
 		for seqNo in range(0, maxTestRuns):
-			self.coapClient.sendPostRequest(resource = ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, enableCON = useCon, payload = payload)
+			self.coapClient.sendPostRequest(resource=ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, enableCON=useCon, payload=payload)
 			
 		endTime = time.time_ns()
 		elapsedMillis = (endTime - startTime) / self.NS_IN_MILLIS
@@ -139,6 +140,7 @@ class CoapClientPerformanceTest(unittest.TestCase):
 		print("\nPUT message - useCON = " + str(useCon) + " [" + str(maxTestRuns) + "]: " + str(elapsedMillis) + " ms. Payload Len: " + str(len(payload)))
 		
 		sleep(2)
+
 	
 if __name__ == "__main__":
 	unittest.main()

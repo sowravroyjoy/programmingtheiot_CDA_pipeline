@@ -12,6 +12,7 @@ import unittest
 
 from programmingtheiot.cda.sim.PressureSensorSimTask import PressureSensorSimTask
 
+
 class PressureSensorSimTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -23,7 +24,7 @@ class PressureSensorSimTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing PressureSensorSimTask class...")
 		self.pSimTask = PressureSensorSimTask()
 		
@@ -45,6 +46,7 @@ class PressureSensorSimTaskTest(unittest.TestCase):
 		val = self.pSimTask.getTelemetryValue()
 		logging.info("Pressure data: %f", val)
 		self.assertGreater(val, 0.0)
+
 
 if __name__ == "__main__":
 	unittest.main()

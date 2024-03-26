@@ -21,6 +21,7 @@ from programmingtheiot.common.ResourceNameEnum import ResourceNameEnum
 from programmingtheiot.data.DataUtil import DataUtil
 from programmingtheiot.data.ActuatorData import ActuatorData
 
+
 class DeviceDataManagerWithMqttClientOnlyTest(unittest.TestCase):
 	"""
 	This test case class contains very basic integration tests for
@@ -43,7 +44,7 @@ class DeviceDataManagerWithMqttClientOnlyTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing DeviceDataManager class...")
 		
 	def setUp(self):
@@ -52,7 +53,7 @@ class DeviceDataManagerWithMqttClientOnlyTest(unittest.TestCase):
 	def tearDown(self):
 		pass
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testStartAndStopManagerWithMqtt(self):
 		"""
 		NOTE: Be sure to enable CoAP by setting the following flag to True
@@ -72,12 +73,13 @@ class DeviceDataManagerWithMqttClientOnlyTest(unittest.TestCase):
 		
 		adJson = DataUtil().actuatorDataToJson(ad)
 		
-		mqttClient.publishMessage(ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, msg = adJson, qos = 1)
+		mqttClient.publishMessage(ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, msg=adJson, qos=1)
 		
 		sleep(10)
 		
 		mqttClient.disconnectClient()
 		ddMgr.stopManager()
+
 
 if __name__ == "__main__":
 	unittest.main()

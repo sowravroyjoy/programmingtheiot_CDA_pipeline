@@ -13,32 +13,34 @@ from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class DataUtil():
 	"""
 	Shell representation of class for student implementation.
 	
 	"""
 
-	def __init__(self, encodeToUtf8 = False):
+	def __init__(self, encodeToUtf8=False):
 		pass
 	
-	def actuatorDataToJson(self, data: ActuatorData = None):
+	def actuatorDataToJson(self, data: ActuatorData=None):
 		pass
 	
-	def sensorDataToJson(self, data: SensorData = None):
+	def sensorDataToJson(self, data: SensorData=None):
 		pass
 
-	def systemPerformanceDataToJson(self, data: SystemPerformanceData = None):
+	def systemPerformanceDataToJson(self, data: SystemPerformanceData=None):
 		pass
 	
-	def jsonToActuatorData(self, jsonData: str = None):
+	def jsonToActuatorData(self, jsonData: str=None):
 		pass
 	
-	def jsonToSensorData(self, jsonData: str = None):
+	def jsonToSensorData(self, jsonData: str=None):
 		pass
 	
-	def jsonToSystemPerformanceData(self, jsonData: str = None):
+	def jsonToSystemPerformanceData(self, jsonData: str=None):
 		pass
+
 	
 class JsonDataEncoder(JSONEncoder):
 	"""
@@ -46,6 +48,7 @@ class JsonDataEncoder(JSONEncoder):
 	can be converted to a dict.
 	
 	"""
+
 	def default(self, o):
 		return o.__dict__
 	

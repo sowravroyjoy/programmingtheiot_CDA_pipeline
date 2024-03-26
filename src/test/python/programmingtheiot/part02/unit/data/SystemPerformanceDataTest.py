@@ -14,6 +14,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class SystemPerformanceDataTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -24,13 +25,13 @@ class SystemPerformanceDataTest(unittest.TestCase):
 	"""
 	
 	DEFAULT_NAME = "SystemPerformanceDataFooBar"
-	DEFAULT_CPU_UTIL_DATA  = 10.0
+	DEFAULT_CPU_UTIL_DATA = 10.0
 	DEFAULT_DISK_UTIL_DATA = 10.0
-	DEFAULT_MEM_UTIL_DATA  = 10.0
+	DEFAULT_MEM_UTIL_DATA = 10.0
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing SystemPerformanceData class...")
 		
 	def setUp(self):
@@ -84,6 +85,7 @@ class SystemPerformanceDataTest(unittest.TestCase):
 		logging.info("System perf data as string: " + str(spd))
 		
 		return spd
+
 
 if __name__ == "__main__":
 	unittest.main()

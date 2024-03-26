@@ -12,6 +12,7 @@ import unittest
 
 from programmingtheiot.cda.system.SystemMemUtilTask import SystemMemUtilTask
 
+
 class SystemMemUtilTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -23,7 +24,7 @@ class SystemMemUtilTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing SystemMemUtilTask class...")
 		self.memUtilTask = SystemMemUtilTask()
 	
@@ -38,6 +39,7 @@ class SystemMemUtilTaskTest(unittest.TestCase):
 		
 		self.assertGreaterEqual(val, 0.0)
 		logging.info("Virtual memory utilization: %s", str(val))
+
 
 if __name__ == "__main__":
 	unittest.main()

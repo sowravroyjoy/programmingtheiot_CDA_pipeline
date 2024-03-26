@@ -21,6 +21,7 @@ from programmingtheiot.cda.system.SystemMemUtilTask import SystemMemUtilTask
 
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class SystemPerformanceManager(object):
 	"""
 	Shell representation of class for student implementation.

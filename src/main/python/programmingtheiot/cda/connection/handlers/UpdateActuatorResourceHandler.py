@@ -14,6 +14,7 @@ from programmingtheiot.common.IDataMessageListener import IDataMessageListener
 from programmingtheiot.data.DataUtil import DataUtil
 from programmingtheiot.data.ActuatorData import ActuatorData
 
+
 class UpdateActuatorResourceHandler():
 	"""
 	Standard resource that will handle an incoming actuation command,
@@ -24,6 +25,6 @@ class UpdateActuatorResourceHandler():
 	
 	"""
 
-	def __init__(self, dataMsgListener: IDataMessageListener = None):
+	def __init__(self, dataMsgListener: IDataMessageListener=None):
 		pass
 		

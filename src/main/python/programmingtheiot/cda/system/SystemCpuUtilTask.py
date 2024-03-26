@@ -12,6 +12,7 @@ import psutil
 
 from programmingtheiot.cda.system.BaseSystemUtilTask import BaseSystemUtilTask
 
+
 class SystemCpuUtilTask(BaseSystemUtilTask):
 	"""
 	Shell representation of class for student implementation.

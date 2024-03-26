@@ -17,6 +17,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.cda.emulated.LedDisplayEmulatorTask import LedDisplayEmulatorTask
 
+
 class LedDisplayEmulatorTaskTest(unittest.TestCase):
 	"""
 	This test case class contains very basic unit tests for
@@ -39,7 +40,7 @@ class LedDisplayEmulatorTaskTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Testing LedDisplayEmulatorTask class [using SenseHAT emulator]...")
 		self.lddSimTask = LedDisplayEmulatorTask()
 		
@@ -50,7 +51,7 @@ class LedDisplayEmulatorTaskTest(unittest.TestCase):
 		pass
 
 	def testUpdateEmulator(self):
-		ad = ActuatorData(typeID = ConfigConst.LED_DISPLAY_ACTUATOR_TYPE)
+		ad = ActuatorData(typeID=ConfigConst.LED_DISPLAY_ACTUATOR_TYPE)
 		ad.setCommand(ConfigConst.COMMAND_ON)
 		ad.setStateData(self.HELLO_WORLD_A)
 		
@@ -89,6 +90,7 @@ class LedDisplayEmulatorTaskTest(unittest.TestCase):
 			logging.info("ActuatorData: " + str(adr))
 		else:
 			logging.warning("ActuatorData is None.")
+
 			
 if __name__ == "__main__":
 	unittest.main()

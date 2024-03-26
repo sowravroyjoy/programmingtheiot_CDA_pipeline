@@ -22,6 +22,7 @@ from programmingtheiot.data.ActuatorData import ActuatorData
 from programmingtheiot.data.SensorData import SensorData
 from programmingtheiot.data.SystemPerformanceData import SystemPerformanceData
 
+
 class DataIntegrationTest(unittest.TestCase):
 	"""
 	This test case class contains very basic integration tests for
@@ -34,7 +35,7 @@ class DataIntegrationTest(unittest.TestCase):
 	
 	@classmethod
 	def setUpClass(self):
-		logging.basicConfig(format = '%(asctime)s:%(module)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+		logging.basicConfig(format='%(asctime)s:%(module)s:%(levelname)s:%(message)s', level=logging.DEBUG)
 		logging.info("Running DataIntegrationTest test cases...")
 		
 		encodeToUtf8 = False
@@ -47,7 +48,7 @@ class DataIntegrationTest(unittest.TestCase):
 		if not os.path.exists(self.cdaDataPath):
 			logging.info("================================================")
 			logging.info("DataIntegrationTest - path needs to be created: " + self.cdaDataPath)
-			os.makedirs(self.cdaDataPath, exist_ok = True)
+			os.makedirs(self.cdaDataPath, exist_ok=True)
 			
 	def setUp(self):
 		logging.info("================================================")
@@ -59,86 +60,87 @@ class DataIntegrationTest(unittest.TestCase):
 	def tearDown(self):
 		pass
 	
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testWriteActuatorDataToCdaDataPath(self):
 		logging.info("\n\n----- [ActuatorData to JSON to file] -----")
 		
-		dataObj  = ActuatorData()
-		dataStr  = self.dataUtil.actuatorDataToJson(dataObj)
+		dataObj = ActuatorData()
+		dataStr = self.dataUtil.actuatorDataToJson(dataObj)
 		fileName = self.cdaDataPath + '/ActuatorData.dat'
 
 		logging.info("Sample ActuatorData JSON (validated): " + str(dataStr))
 		logging.info("Writing ActuatorData JSON to CDA data path: " + fileName)
 		
 		fileRef = Path(fileName)
-		fileRef.write_text(dataStr, encoding = 'utf-8')
+		fileRef.write_text(dataStr, encoding='utf-8')
 		
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testWriteSensorDataToCdaDataPath(self):
 		logging.info("\n\n----- [SensorData to JSON to file] -----")
 		
-		dataObj  = SensorData()
-		dataStr  = self.dataUtil.sensorDataToJson(dataObj)
+		dataObj = SensorData()
+		dataStr = self.dataUtil.sensorDataToJson(dataObj)
 		fileName = self.cdaDataPath + '/SensorData.dat'
 
 		logging.info("Sample SensorData JSON (validated): " + str(dataStr))
 		logging.info("Writing SensorData JSON to CDA data path: " + fileName)
 		
 		fileRef = Path(fileName)
-		fileRef.write_text(dataStr, encoding = 'utf-8')
+		fileRef.write_text(dataStr, encoding='utf-8')
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testWriteSystemPerformanceDataToCdaDataPath(self):
 		logging.info("\n\n----- [SystemPerformanceData to JSON to file] -----")
 		
-		dataObj  = SystemPerformanceData()
-		dataStr  = self.dataUtil.sensorDataToJson(dataObj)
+		dataObj = SystemPerformanceData()
+		dataStr = self.dataUtil.sensorDataToJson(dataObj)
 		fileName = self.cdaDataPath + '/SystemPerformanceData.dat'
 
 		logging.info("Sample SystemPerformanceData JSON (validated): " + str(dataStr))
 		logging.info("Writing SystemPerformanceData JSON to CDA data path: " + fileName)
 		
 		fileRef = Path(fileName)
-		fileRef.write_text(dataStr, encoding = 'utf-8')
+		fileRef.write_text(dataStr, encoding='utf-8')
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testReadActuatorDataFromGdaDataPath(self):
 		logging.info("\n\n----- [ActuatorData JSON from file to object] -----")
 		
 		fileName = self.gdaDataPath + '/ActuatorData.dat'
-		fileRef  = Path(fileName)
-		dataStr  = fileRef.read_text(encoding = 'utf-8')
+		fileRef = Path(fileName)
+		dataStr = fileRef.read_text(encoding='utf-8')
 
-		dataObj  = self.dataUtil.jsonToActuatorData(dataStr)
+		dataObj = self.dataUtil.jsonToActuatorData(dataStr)
 
 		logging.info("ActuatorData JSON from GDA: " + dataStr)
 		logging.info("ActuatorData object: " + str(dataObj))
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testReadSensorDataFromGdaDataPath(self):
 		logging.info("\n\n----- [SensorData JSON from file to object] -----")
 		
 		fileName = self.gdaDataPath + '/SensorData.dat'
-		fileRef  = Path(fileName)
-		dataStr  = fileRef.read_text(encoding = 'utf-8')
+		fileRef = Path(fileName)
+		dataStr = fileRef.read_text(encoding='utf-8')
 
-		dataObj  = self.dataUtil.jsonToSensorData(dataStr)
+		dataObj = self.dataUtil.jsonToSensorData(dataStr)
 
 		logging.info("SensorData JSON from GDA: " + dataStr)
 		logging.info("SensorData object: " + str(dataObj))
 
-	#@unittest.skip("Ignore for now.")
+	# @unittest.skip("Ignore for now.")
 	def testReadSystemPerformanceDataFromGdaDataPath(self):
 		logging.info("\n\n----- [SystemPerformanceData JSON from file to object] -----")
 		
 		fileName = self.gdaDataPath + '/SystemPerformanceData.dat'
-		fileRef  = Path(fileName)
-		dataStr  = fileRef.read_text(encoding = 'utf-8')
+		fileRef = Path(fileName)
+		dataStr = fileRef.read_text(encoding='utf-8')
 
-		dataObj  = self.dataUtil.jsonToSystemPerformanceData(dataStr)
+		dataObj = self.dataUtil.jsonToSystemPerformanceData(dataStr)
 
 		logging.info("SystemPerformanceData JSON from GDA: " + dataStr)
 		logging.info("SystemPerformanceData object: " + str(dataObj))
+
 
 if __name__ == "__main__":
 	unittest.main()

@@ -14,6 +14,7 @@ import programmingtheiot.common.ConfigConst as ConfigConst
 
 from programmingtheiot.data.SensorData import SensorData
 
+
 class BaseSensorSimTask():
 	"""
 	Shell representation of class for student implementation.
@@ -23,7 +24,7 @@ class BaseSensorSimTask():
 	DEFAULT_MIN_VAL = 0.0
 	DEFAULT_MAX_VAL = 1000.0
 	
-	def __init__(self, name = ConfigConst.NOT_SET, typeID: int = ConfigConst.DEFAULT_SENSOR_TYPE, dataSet = None, minVal: float = DEFAULT_MIN_VAL, maxVal: float = DEFAULT_MAX_VAL):
+	def __init__(self, name=ConfigConst.NOT_SET, typeID: int=ConfigConst.DEFAULT_SENSOR_TYPE, dataSet=None, minVal: float=DEFAULT_MIN_VAL, maxVal: float=DEFAULT_MAX_VAL):
 		pass
 	
 	def generateTelemetry(self) -> SensorData:

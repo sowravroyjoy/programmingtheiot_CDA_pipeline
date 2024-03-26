@@ -14,7 +14,8 @@ import logging
 
 from time import sleep
 
-logging.basicConfig(format = '%(asctime)s:%(name)s:%(levelname)s:%(message)s', level = logging.DEBUG)
+logging.basicConfig(format='%(asctime)s:%(name)s:%(levelname)s:%(message)s', level=logging.DEBUG)
+
 
 class ConstrainedDeviceApp():
 	"""
@@ -77,6 +78,7 @@ def main():
 	
 	# optionally stop the app - this can be removed if needed
 	cda.stopApp(0)
+
 
 if __name__ == '__main__':
 	"""
