@@ -12,4 +12,5 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run the Python application
-CMD ["python", "src/main/python/programmingtheiot/cda/app/ConstrainedDeviceApp.py"]
+# CMD ["python", "src/main/python/programmingtheiot/cda/app/ConstrainedDeviceApp.py"]
+CMD ["sh", "-c", "python3 src/main/python/programmingtheiot/cda/app/ConstrainedDeviceApp.py && python3 src/test/python/programmingtheiot/part01/integration/app/ConstrainedDeviceAppTest.py"]
